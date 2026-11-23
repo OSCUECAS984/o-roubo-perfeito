@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <title>O Roubo Perfeito — Jogo de Investigação</title>
+    <link rel="stylesheet" href="css/fonts.css" />
+    <link rel="stylesheet" href="css/jogo.css" />
+  </head>
+  <body>
+    <div id="tela">
+      <div id="palco">
+        <!-- 1. Vídeo de abertura -->
+        <section id="cena-video" class="cena ativa">
+          <video id="video" src="../../assets/video/cutscene.mp4" preload="auto" playsinline></video>
+          <div id="toque">
+            <div class="toque-caixa">
+              <p class="toque-sobre">FEIRA DE PORTUGUÊS · JOGO DE INVESTIGAÇÃO</p>
+              <p class="toque-chamada">UM CASO PARA <em>VOCÊ</em>, DETETIVE</p>
+              <button id="btn-toque" class="btn-grande">TOQUE PARA COMEÇAR</button>
+              <p class="toque-som"><span data-icone="som"></span> Ligue o som!</p>
+            </div>
+          </div>
+          <button id="btn-pular" class="btn">PULAR <span data-icone="seta"></span></button>
+        </section>
+
+        <!-- 2. Museu: título, escolha do detetive, mapa e final -->
+        <section id="cena-mundo" class="cena">
+          <div id="mundo-cam" class="cam"></div>
+          <div id="titulo-escuro"></div>
+          <h1 id="titulo">
+            <span id="titulo-a">O ROUBO</span><span id="titulo-q"><span class="q-palavra-caixa"><span class="q-palavra">quase</span></span><span class="q-circ-caixa"><span class="q-circ">^</span></span></span><span id="titulo-b">PERFEITO</span>
+          </h1>
+          <div id="titulo-acoes">
+            <button id="btn-iniciar" class="btn-grande">INICIAR</button>
+            <div class="titulo-mini">
+              <button id="btn-fama" class="btn"><span data-icone="trofeu"></span> MURAL DOS DETETIVES</button>
+              <button id="btn-creditos" class="btn">CRÉDITOS</button>
+            </div>
+          </div>
+          <div id="titulo-rodape"></div>
+          <div id="escolha"></div>
+          <div id="hud-caso"></div>
+          <div id="assinatura"></div>
+          <div id="jornal"></div>
+        </section>
+
+        <!-- 3. Local da investigação -->
+        <section id="cena-local" class="cena">
+          <div id="local-cam" class="cam"><div id="local-arte"></div></div>
+          <div id="lanterna"></div>
+          <div id="busca-alvos"></div>
+          <header id="local-titulo"></header>
+          <div id="painel"></div>
+        </section>
+
+        <!-- 4. Confronto: aponte a Sombra -->
+        <section id="cena-lineup" class="cena">
+          <div id="lu-fundo"></div>
+          <div id="lu-cab">
+            <h2>APONTE A SOMBRA!</h2>
+            <p>As pistas riscaram quatro pessoas. Toque em <em>quem sobrou</em> no mural.</p>
+          </div>
+          <div id="lu-suspeitos"></div>
+          <div id="lu-escuro"></div>
+          <div id="lu-lav-v" class="lu-lavagem"></div>
+          <div id="lu-lav-a" class="lu-lavagem"></div>
+          <div id="lu-revela"></div>
+        </section>
+
+        <!-- camadas fixas -->
+        <div id="mural"></div>
+        <div id="dialogo">
+          <div id="til-retrato"></div>
+          <div class="balao" id="balao">
+            <span class="balao-nome" id="balao-nome">TIL</span>
+            <p id="dialogo-texto"></p>
+            <span class="balao-seta" data-icone="seta"></span>
+          </div>
+        </div>
+        <div id="hud">
+          <button id="btn-som" class="btn-icone" aria-label="Ligar ou desligar o som"></button>
+          <button id="btn-tela" class="btn-icone" aria-label="Tela cheia"></button>
+        </div>
+        <div id="fx"></div>
+        <div id="modal"><div class="modal-caixa" id="modal-caixa"></div></div>
+        <div id="cortina"></div>
+        <div id="bloqueio"></div>
+      </div>
+    </div>
+
+    <script src="js/vendor/gsap.min.js"></script>
+    <script src="js/dados.js"></script>
+    <script src="js/arte.js"></script>
+    <script src="js/som.js"></script>
+    <script src="js/fx.js"></script>
+    <script src="js/jogo.js"></script>
+  </body>
+</html>

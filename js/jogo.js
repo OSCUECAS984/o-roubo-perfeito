@@ -558,6 +558,10 @@
     }
     const s = G.sessao;
     setTimeout(() => { if (s === G.sessao && G.fase === "video") $("#btn-pular").classList.add("visivel"); }, 900);
+    // Vigia: se o vídeo não andar (download lento, arquivo que não carrega), vai direto ao título.
+    setTimeout(() => {
+      if (s === G.sessao && G.fase === "video" && !(video.currentTime > 0.2)) irParaTitulo(false);
+    }, 8000);
   }
 
   async function irParaTitulo(terminou) {
